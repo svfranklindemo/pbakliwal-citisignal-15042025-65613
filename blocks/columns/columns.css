@@ -20,6 +20,24 @@
   height: 360px;
   border-radius: 24px;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.columns.block > div > div a {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.columns.block > div > div a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+/* Hide the button since the whole card is now clickable */
+.columns.block .button {
+  display: none;
 }
 
 .columns.block picture {
@@ -53,6 +71,9 @@
   margin: 0;
   color: white;
   z-index: 1;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
 }
 
 .columns.block .button-container {
@@ -75,15 +96,6 @@
   font-size: 16px;
 }
 
-/* Add the main heading */
-.columns.block::before {
-  content: "Explore All Categories";
-  display: block;
-  font-size: 48px;
-  font-weight: 800;
-  margin: 0 0 48px 0;
-  color: var(--text-color, #000000);
-}
 
 @media (width >= 768px) {
   .columns.block > div {
