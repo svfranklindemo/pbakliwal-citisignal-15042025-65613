@@ -23,23 +23,6 @@
   cursor: pointer;
 }
 
-.columns.block > div > div a {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.columns.block > div > div a::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-}
-
-/* Hide the button since the whole card is now clickable */
-.columns.block .button {
-  display: none;
-}
-
 .columns.block picture {
   position: absolute;
   inset: 0;
