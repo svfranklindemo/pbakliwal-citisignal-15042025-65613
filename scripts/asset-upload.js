@@ -13,7 +13,10 @@ let env = 'production';
 if (shouldLoadCopilot) {
     env = urlParams.get('copilot-prod') === '1' ? 'production' : 'stage';
 }
-
+let aemURL = 'https://author-p121371-e1189853.adobeaemcloud.com/';
+if (shouldLoadCopilot) {
+    aemURL = urlParams.get('copilot-prod') === '1' ? 'https://author-p165802-e1765367.adobeaemcloud.com/' : 'https://author-p121371-e1189853.adobeaemcloud.com/';
+}
 // Function to get the authentication token
 const getAuthToken = () => {
     return window.location.search.split('ims_token=')[1];
@@ -253,7 +256,7 @@ const getPayloadUpdates = async () => {
             projectName: targetDemo.name,
             type: "citisignal",
             userLdap: userLdap,
-            aemURL: "https://author-p121371-e1189853.adobeaemcloud.com/",
+            aemURL: aemURL,
             images: updates,
             demoId: targetDemo.id,
             pagePath: "/content/"+userLdap+"/"+targetDemo.id+"/us/en"+pagePathVar,
